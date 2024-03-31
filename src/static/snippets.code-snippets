@@ -1,0 +1,17 @@
+{
+    "snippet": {
+        "scope": "snippets",
+        "prefix": "snippet",
+        "description": "Create a snippet",
+        "body": [
+            "\"${1:name}\" : {",
+            "\t\"prefix\" : \"$2\",",
+            "\t\"scope\" : \"$3\",",
+            "\t\"description\" : \"$4\",",
+            "\t\"body\" : [",
+            "\t\t$0",
+            "\t]",
+            "}"
+        ]
+    }
+}

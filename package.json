@@ -1,0 +1,101 @@
+{
+    "name": "vscode-snippet-lang",
+    "displayName": "vscode-snippet-lang",
+    "description": "vscode built-in snippets language helper",
+    "publisher": "davidfreer",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.87.0"
+    },
+    "categories": [
+        "Snippets",
+        "Other"
+    ],
+    "keywords": [
+        "Snippets",
+        "Language",
+        "TM",
+        "Snippet Variable"
+    ],
+    "activationEvents": [
+        "onLanguage:snippets",
+        "onFileSystem:*.code-snippets"
+    ],
+    "main": "./dist/extension.js",
+    "browser": "./dist/extension.js",
+    "sponsor": {
+        "url": "https://github.com/sponsors/soulshined"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/soulshined/vscode-snippets-lang"
+    },
+    "license": "MIT",
+    "capabilities": {
+        "untrustedWorkspaces": {
+            "supported": true
+        }
+    },
+    "homepage": "https://github.com/soulshined/vscode-snippets-lang",
+    "icon": "./src/static/images/icon.png",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "snippets",
+                "path": "./src/static/snippets.code-snippets"
+            }
+        ],
+        "configurationDefaults": {
+            "[snippets]": {
+                "editor.quickSuggestions": {
+                    "other": false,
+                    "comments": false,
+                    "strings": true
+                }
+            }
+        },
+        "configuration": {
+            "title": "vscode-snippet-lang",
+            "properties": {
+                "vscode-snippet-lang.codelens.enabled": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "vscode-snippet-lang.inlayhints.enabled": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run package",
+        "compile": "webpack",
+        "watch": "webpack --watch",
+        "package": "webpack --mode production --devtool hidden-source-map",
+        "test-compile": "tsc -p ./",
+        "test-watch": "tsc -watch -p ./",
+        "pretest": "npm run test-compile",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.2.2",
+        "@types/node": "^14.18.63",
+        "@types/vscode": "^1.87.0",
+        "@typescript-eslint/eslint-plugin": "^4.26.0",
+        "@typescript-eslint/parser": "^4.26.0",
+        "eslint": "^7.27.0",
+        "glob": "^7.1.7",
+        "mocha": "^8.4.0",
+        "ts-loader": "^9.5.1",
+        "typescript": "^4.3.2",
+        "vscode-test": "^1.5.2",
+        "webpack": "^5.91.0",
+        "webpack-cli": "^4.7.0"
+    },
+    "dependencies": {
+        "vscode-json-languageservice": "^5.3.10"
+    }
+}
